@@ -1,0 +1,20 @@
+{
+  "name": "hellobackend",
+  "version": "1.0.0",
+  "description": "a basic app to deploy",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "node",
+    "hello"
+  ],
+  "author": "Yawar Abass",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.1"
+  }
+}
