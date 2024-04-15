@@ -1,4 +1,5 @@
 class ApiError extends Error {
+  // Overiding the Error class of Node.js
   constructor(
     statusCode,
     message = "Something went wrong",

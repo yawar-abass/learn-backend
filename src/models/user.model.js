@@ -51,6 +51,7 @@ const userSchema = new Schema(
   }
 );
 
+// hash the password before saving it
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
 
@@ -58,10 +59,12 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+//check if password is correct
 userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
+//Generating Tokens
 userSchema.methods.generateAccessToken = function () {
   return jwt.sign(
     {
