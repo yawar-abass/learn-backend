@@ -20,7 +20,9 @@ const uploadOnCloudinary = async (localFilePath) => {
       }
     );
 
-    console.log("File uploaded on cloudinary", response.url);
+    // console.log("File uploaded on cloudinary", response.url);
+
+    fs.unlinkSync(localFilePath);
 
     return response;
   } catch (error) {
@@ -31,3 +33,5 @@ const uploadOnCloudinary = async (localFilePath) => {
     return null;
   }
 };
+
+export { uploadOnCloudinary };
